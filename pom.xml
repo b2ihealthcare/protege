@@ -88,7 +88,6 @@
 		<module>protege-common</module>
 		<module>protege-editor-core</module>
 		<module>protege-editor-owl</module>
-		<module>protege-desktop</module>
 	</modules>
 	
 	<scm>
