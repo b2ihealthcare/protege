@@ -84,7 +84,6 @@
 	</mailingLists>
 		
 	<modules>
-		<module>protege-launcher</module>
 		<module>protege-common</module>
 		<module>protege-editor-core</module>
 		<module>protege-editor-owl</module>
