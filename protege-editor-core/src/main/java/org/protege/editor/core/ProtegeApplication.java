@@ -100,14 +100,12 @@ public class ProtegeApplication implements BundleActivator {
     		displayPlatform();
     		initApplication();
 
+//            if (OSUtils.isOSX()) {
+//                ProtegeAppleApplication.getInstance();
+//            }
 
-    		if (OSUtils.isOSX()) {
-    			ProtegeAppleApplication.getInstance();
-    		}
-
-    		ProtegeManager.getInstance().initialise(this);
-    		startApplication();
-
+            ProtegeManager.getInstance().initialise(this);
+//            startApplication();
 
     	}
     	catch (Throwable t) {
@@ -255,7 +253,7 @@ public class ProtegeApplication implements BundleActivator {
         initializeLookAndFeel();
 //        checkConfiguration();
         setupExceptionHandler();
-        processCommandLineURIs();  // plugins may set arguments
+//        processCommandLineURIs();  // plugins may set arguments
         loadRecentEditorKits();
         return this;
     }
