@@ -254,7 +254,7 @@
 						<message>Maven artifacts for ${project.version}</message>
 						<noJekyll>true</noJekyll>
 						<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-						<branch>refs/heads/mvn-repo</branch>
+						<branch>refs/heads/gh-pages</branch>
 						<merge>true</merge>
 						<includes>
 							<include>**/*</include>
