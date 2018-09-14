@@ -50,6 +50,5 @@ public class ErrorNotificationLabel extends JLabel {
 
 
     private void showErrors() {
-        ProtegeApplication.showLogView();
     }
 }
