@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.b2international.snowowl</groupId>
+		<artifactId>protege-parent</artifactId>
+		<version>5.0.1-b2i</version>
+		<relativePath>../</relativePath>
+	</parent>
+
+	<!-- groupId and version are inherited from the parent -->	
+	<artifactId>protege-common</artifactId>
+	<packaging>bundle</packaging>
+	
+	<name>protege-common</name>
+	<description>Core Protege Libraries</description>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.main</artifactId>
+		</dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+            <plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>org.protege.common.Activator</Bundle-Activator>
+						<Bundle-ClassPath>.</Bundle-ClassPath>
+						<Bundle-SymbolicName>org.protege.common</Bundle-SymbolicName>
+						<Export-Package>
+							org.protege.common.*;version=${project.version}
+						</Export-Package>
+						<Import-Package>
+							!com.ibm.*, 
+							!javax.jms,
+							!javax.mail.*, 
+							!javax.jmdns,
+							!com.sun.*,
+							sun.misc;resolution:=optional,
+							*
+						</Import-Package>
+					</instructions>
+				</configuration>
+            </plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -3,10 +3,10 @@
   <groupId>com.b2international.snowowl</groupId>
   <artifactId>protege-common</artifactId>
   <versioning>
-    <release>5.0.0-beta-21</release>
+    <release>5.0.1-b2i</release>
     <versions>
-      <version>5.0.0-beta-21</version>
+      <version>5.0.1-b2i</version>
     </versions>
-    <lastUpdated>20180914121830</lastUpdated>
+    <lastUpdated>20190328135507</lastUpdated>
   </versioning>
 </metadata>
