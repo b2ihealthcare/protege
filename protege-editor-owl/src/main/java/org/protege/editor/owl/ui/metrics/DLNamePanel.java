@@ -1,11 +1,16 @@
 package org.protege.editor.owl.ui.metrics;
 
-import org.semanticweb.owlapi.util.DLExpressivityChecker;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.Icon;
+import javax.swing.JPanel;
+
+import org.semanticweb.owlapi.util.Construct;
 
 
 /**
@@ -34,9 +39,9 @@ public class DLNamePanel extends JPanel {
     }
 
 
-    public void setConstructs(List<DLExpressivityChecker.Construct> constructs) {
+    public void setConstructs(List<Construct> constructs) {
         icons.clear();
-        for (DLExpressivityChecker.Construct constuct : constructs) {
+        for (Construct constuct : constructs) {
             Icon curIcon = ExpressivityIcons.getIcon(constuct);
             if (curIcon != null) {
                 icons.add(curIcon);

@@ -3,10 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>edu.stanford.protege</groupId>
+		<groupId>com.b2international.snowowl</groupId>
 		<artifactId>protege-parent</artifactId>
-		<version>5.0.0-beta-21</version>
-		<relativePath>../</relativePath>
+		<version>5.0.1-b2i</version>
 	</parent>
 
 	<!-- groupId and version are inherited from the parent -->	
@@ -20,19 +19,16 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.12</version>
 		</dependency>
 
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
-			<version>1.1.3</version>
 		</dependency>
 
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.1.3</version>
 		</dependency>
 
 		<dependency>
@@ -66,13 +62,11 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
-			<version>1.3</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

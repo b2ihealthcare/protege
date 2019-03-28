@@ -1,5 +1,7 @@
 package org.protege.editor.owl.ui.clsdescriptioneditor;
 
+import java.util.function.Supplier;
+
 import org.protege.editor.owl.model.OWLModelManager;
 import org.protege.editor.owl.model.classexpression.OWLExpressionParserException;
 import org.protege.editor.owl.model.parser.ParserUtil;
@@ -9,8 +11,6 @@ import org.semanticweb.owlapi.manchestersyntax.renderer.ParserException;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLOntologyLoaderConfiguration;
 import org.semanticweb.owlapi.util.mansyntax.ManchesterOWLSyntaxParser;
-
-import javax.inject.Provider;
 
 
 /**
@@ -42,7 +42,7 @@ class OWLClassExpressionChecker implements OWLExpressionChecker<OWLClassExpressi
         if(text.isEmpty()) {
             return null;
         }
-        ManchesterOWLSyntaxParser parser = new ManchesterOWLSyntaxParserImpl(new Provider<OWLOntologyLoaderConfiguration>() {
+        ManchesterOWLSyntaxParser parser = new ManchesterOWLSyntaxParserImpl(new Supplier<OWLOntologyLoaderConfiguration>() {
             @Override
             public OWLOntologyLoaderConfiguration get() {
                 return new OWLOntologyLoaderConfiguration();

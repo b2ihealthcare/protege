@@ -1,16 +1,18 @@
 package org.protege.editor.owl.model.repository.extractors;
 
-import com.google.common.base.Optional;
-import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLOntologyID;
-import org.semanticweb.owlapi.rdf.rdfxml.parser.RDFConsumer;
-import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
-import org.xml.sax.SAXException;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLOntologyID;
+import org.semanticweb.owlapi.model.OWLOntologyLoaderConfiguration;
+import org.semanticweb.owlapi.rdf.rdfxml.parser.RDFConsumer;
+import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
+import org.xml.sax.SAXException;
+
+import com.google.common.base.Optional;
 
 public class RdfExtractorConsumer implements RDFConsumer {
 
@@ -23,9 +25,17 @@ public class RdfExtractorConsumer implements RDFConsumer {
     private Map<String, String> nameToVersionMap  = new HashMap<>();
 
     private Set<String> notPossibleOntologyNames  = new HashSet<>();
+
+	private OWLOntologyLoaderConfiguration configuration;
     
     public RdfExtractorConsumer() {
         ontologyProperties.add(OWLRDFVocabulary.OWL_IMPORTS.getIRI().toString());
+        configuration = new OWLOntologyLoaderConfiguration();
+    }
+    
+    @Override
+    public OWLOntologyLoaderConfiguration getConfiguration() {
+    	return configuration;
     }
     
     public Optional<OWLOntologyID> getOntologyID() {

@@ -2,9 +2,9 @@
     <modelVersion>4.0.0</modelVersion>
     
 	<parent>
-		<groupId>edu.stanford.protege</groupId>
+		<groupId>com.b2international.snowowl</groupId>
 		<artifactId>protege-parent</artifactId>
-		<version>5.0.0-beta-21</version>
+		<version>5.0.1-b2i</version>
 		<relativePath>../</relativePath>
 	</parent>
 	
@@ -45,19 +45,19 @@
         </dependency>
 
         <dependency>
-			<groupId>edu.stanford.protege</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>protege-editor-core</artifactId>
 			<version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
-			<groupId>edu.stanford.protege</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>protege-editor-owl</artifactId>
 			<version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
-			<groupId>edu.stanford.protege</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>protege-launcher</artifactId>
 			<version>${project.parent.version}</version>
         </dependency>
