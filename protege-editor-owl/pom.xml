@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.b2international.snowowl</groupId>
         <artifactId>protege-parent</artifactId>
-        <version>5.0.1-b2i</version>
+        <version>5.0.2-b2i</version>
         <relativePath>../</relativePath>
     </parent>
 
@@ -114,6 +114,7 @@
 						</_exportcontents>
                         <Import-Package>
                             org.eclipse.core.runtime;registry=split,
+                            org.osgi.framework;;version="[1.6,2)",
                             *
                         </Import-Package>
                     </instructions>
