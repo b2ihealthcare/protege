@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.b2international.snowowl</groupId>
+		<artifactId>protege-parent</artifactId>
+		<version>5.0.3-b2i</version>
+		<relativePath>../</relativePath>
+	</parent>
+	
+	<!-- groupId and version are inherited from the parent -->	
+	<artifactId>protege-editor-core</artifactId>
+	<packaging>bundle</packaging>
+
+	<name>protege-editor-core</name>
+    <description>Core ontology editing infrastructure used by the Protege desktop application.</description>
+    
+	<dependencies>
+
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.registry</artifactId>
+			<version>3.5.0.v20100503</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.common</artifactId>
+			<version>3.6.0.v20100503</version>
+		</dependency>
+			
+		<dependency>
+			<groupId>com.googlecode.mdock</groupId>
+			<artifactId>mdock</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jgoodies</groupId>
+			<artifactId>jgoodies-looks</artifactId>
+			<version>2.5.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jgoodies</groupId>
+			<artifactId>jgoodies-common</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+
+		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+            <plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>org.protege.editor.core.ProtegeApplication</Bundle-Activator>						
+						<Bundle-SymbolicName>org.protege.editor.core.application;singleton:=true</Bundle-SymbolicName>
+						<Embed-Dependency>mdock,jgoodies-looks,jgoodies-common</Embed-Dependency>
+						<Export-Package>
+							org.protege.editor.core.*,
+						</Export-Package>
+						<_exportcontents>
+							!com.jgoodies.looks.plastic.icons.*,
+							org.coode.mdock.*,
+							com.jgoodies.*,
+						</_exportcontents>
+						<Import-Package>
+							!com.sun.*,
+							org.eclipse.core.runtime;registry="split",
+							org.osgi.framework;version="[1.6,2)",
+							com.google.common.*;version="[18.0,21.0)"
+							*
+						</Import-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>ide</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
