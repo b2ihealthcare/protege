@@ -3,7 +3,7 @@
 
     <groupId>com.b2international.snowowl</groupId>
     <artifactId>protege-parent</artifactId>
-    <version>5.0.3-b2i</version>
+    <version>5.0.4-b2i</version>
     <packaging>pom</packaging>
 
     <name>protege-parent</name>
@@ -95,7 +95,7 @@
 		<connection>scm:git:git@github.com:b2ihealthcare/protege.git</connection>
 		<developerConnection>scm:git:git@github.com:b2ihealthcare/protege.git</developerConnection>
 		<url>https://github.com/b2ihealthcare/protege</url>
-	  	<tag>protege-parent-5.0.3-b2i</tag>
+	  	<tag>protege-parent-5.0.4-b2i</tag>
 	</scm>
 
 	<issueManagement>
