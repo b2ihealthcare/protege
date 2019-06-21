@@ -42,18 +42,18 @@ public class ProtegeAppleApplication {
 
 
 	private ProtegeAppleApplication() {
-		Desktop application = Desktop.getDesktop();
-		application.setPreferencesHandler(event -> handlePreferencesRequest());
-		application.setAboutHandler(event -> handleAboutRequest());
-		application.setOpenFileHandler(event -> {
-			File file = event.getFiles().get(0);
-			try {
-				editFile(file.getAbsolutePath());
-			} catch (Exception e) {
-				logger.error("invalid file: {}", file);
-			}
-		});
-		application.setQuitHandler((event, response) -> handleQuitRequest());
+//		Desktop application = Desktop.getDesktop();
+//		application.setPreferencesHandler(event -> handlePreferencesRequest());
+//		application.setAboutHandler(event -> handleAboutRequest());
+//		application.setOpenFileHandler(event -> {
+//			File file = event.getFiles().get(0);
+//			try {
+//				editFile(file.getAbsolutePath());
+//			} catch (Exception e) {
+//				logger.error("invalid file: {}", file);
+//			}
+//		});
+//		application.setQuitHandler((event, response) -> handleQuitRequest());
 	}
 
 

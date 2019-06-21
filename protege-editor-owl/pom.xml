@@ -110,6 +110,7 @@
                         <Import-Package>
                             org.eclipse.core.runtime;registry=split,
                             org.osgi.framework;;version="[1.6,2)",
+                            com.google.common.*;version="[18.0,22.0)",
                             *
                         </Import-Package>
                     </instructions>

@@ -75,7 +75,6 @@
 							!com.sun.*,
 							org.osgi.framework;;version="[1.6,2)",
 							sun.misc;resolution:=optional,
-							
 							*
 						</Import-Package>
 					</instructions>
