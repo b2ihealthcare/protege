@@ -3,10 +3,10 @@
   <groupId>com.b2international.snowowl</groupId>
   <artifactId>protege-editor-core</artifactId>
   <versioning>
-    <release>5.0.4-b2i</release>
+    <release>5.0.5-b2i</release>
     <versions>
-      <version>5.0.4-b2i</version>
+      <version>5.0.5-b2i</version>
     </versions>
-    <lastUpdated>20190621094212</lastUpdated>
+    <lastUpdated>20200427114805</lastUpdated>
   </versioning>
 </metadata>
