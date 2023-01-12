@@ -1,10 +1,15 @@
 @Library('jenkins-shared-library') _
 
+/**
+* Job Parameters:
+*	skipDeploy - whether to deploy build artifacts in case of successful maven build or not (should be false by default)
+**/
 try {
 
 	def currentVersion
 	def revision
 	def branch
+    def mavenPhase = params.skipDeploy ? "verify" : "deploy"
 
 	slack.notifyBuild()
 
@@ -29,7 +34,7 @@ try {
 		stage('Build') {
 
             withMaven(jdk: 'OpenJDK_8', maven: 'Maven_3.6.3', mavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT') {
-                sh "mvn clean verify -Dmaven.install.skip=true"
+                sh "mvn clean ${mavenPhase} -Dmaven.install.skip=true"
             }
 
 		}
