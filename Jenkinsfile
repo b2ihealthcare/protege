@@ -3,6 +3,7 @@
 /**
 * Job Parameters:
 *	skipDeploy - whether to deploy build artifacts in case of successful maven build or not (should be false by default)
+*   skipJavadoc - whether to build javadoc artifacts as part of the build or not
 **/
 try {
 
@@ -34,7 +35,11 @@ try {
 		stage('Build') {
 
             withMaven(jdk: 'OpenJDK_8', maven: 'Maven_3.6.3', mavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT') {
-                sh "mvn clean ${mavenPhase} -Dmaven.install.skip=true"
+                if (params.skipJavadoc.toBoolean()) {
+                    sh "mvn clean ${mavenPhase} -Dmaven.install.skip=true"
+                } else {
+                    sh "mvn clean ${mavenPhase} -Prelease -Dmaven.install.skip=true"
+                }
             }
 
 		}
