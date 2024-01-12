@@ -3,18 +3,18 @@
 /**
 * Job Parameters:
 *	skipDeploy - whether to deploy build artifacts in case of successful maven build or not (should be false by default)
-*   skipJavadoc - whether to build javadoc artifacts as part of the build or not
+*	skipJavadoc - whether to build javadoc artifacts as part of the build or not
 **/
 try {
 
 	def currentVersion
 	def revision
 	def branch
-    def mavenPhase = params.skipDeploy ? "verify" : "deploy"
+	def mavenPhase = params.skipDeploy ? "verify" : "deploy"
 
 	slack.notifyBuild()
 
-	node('build-jdk8') {
+	node('build-jdk8-isolated') {
 
 		stage('Checkout repository') {
 
@@ -25,8 +25,8 @@ try {
 
 			revision = sh(returnStdout: true, script: "git rev-parse --short HEAD").trim()
 			branch = scmVars.GIT_BRANCH.replaceAll("origin/", "")
-            
-            println("Current version: " + currentVersion)
+			
+			println("Current version: " + currentVersion)
 			println("Revision: " + revision)
 			println("Branch: " + branch)
 
@@ -34,13 +34,13 @@ try {
 
 		stage('Build') {
 
-            withMaven(jdk: 'OpenJDK_8', maven: 'Maven_3.6.3', mavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT') {
-                if (params.skipJavadoc.toBoolean()) {
-                    sh "mvn clean ${mavenPhase} -Dmaven.install.skip=true"
-                } else {
-                    sh "mvn clean ${mavenPhase} -Prelease -Dmaven.install.skip=true"
-                }
-            }
+			withMaven(jdk: 'OpenJDK_8', maven: 'Maven_3.6.3', mavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT') {
+				if (params.skipJavadoc.toBoolean()) {
+					sh "mvn clean ${mavenPhase} -Dmaven.install.skip=true"
+				} else {
+					sh "mvn clean ${mavenPhase} -Prelease -Dmaven.install.skip=true"
+				}
+			}
 
 		}
 
