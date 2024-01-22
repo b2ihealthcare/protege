@@ -14,7 +14,7 @@ try {
 
 	slack.notifyBuild()
 
-	node('build-jdk8-isolated') {
+	node('build-jdk17-isolated') {
 
 		stage('Checkout repository') {
 
@@ -34,7 +34,7 @@ try {
 
 		stage('Build') {
 
-			withMaven(jdk: 'OpenJDK_8', maven: 'Maven_3.6.3', mavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT') {
+			withMaven(jdk: 'OpenJDK_17', maven: 'Maven_3.8.4', mavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT') {
 				if (params.skipJavadoc.toBoolean()) {
 					sh "mvn clean ${mavenPhase} -Dmaven.install.skip=true"
 				} else {
