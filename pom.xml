@@ -3,7 +3,7 @@
 
     <groupId>com.b2international.snowowl</groupId>
     <artifactId>protege-parent</artifactId>
-    <version>5.0.6-b2i</version>
+    <version>5.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>protege-parent</name>
@@ -95,7 +95,7 @@
 		<connection>scm:git:git@github.com:b2ihealthcare/protege.git</connection>
 		<developerConnection>scm:git:git@github.com:b2ihealthcare/protege.git</developerConnection>
 		<url>https://github.com/b2ihealthcare/protege</url>
-		<tag>protege-parent-5.0.6-b2i</tag>
+		<tag>protege-parent-5.0.7-SNAPSHOT</tag>
 	</scm>
 
 	<issueManagement>
@@ -107,10 +107,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
-		<owlapi.version>4.5.10</owlapi.version>		
-		<guava.version>30.1-jre</guava.version>
-		<slf4j.version>1.7.12</slf4j.version>
-		<logback.version>1.1.3</logback.version>
+		<owlapi.version>4.5.26-SNAPSHOT</owlapi.version>		
+		<guava.version>32.1.3-jre</guava.version>
+		<slf4j.version>2.0.11</slf4j.version>
+		<logback.version>1.4.14</logback.version>
 		<lib.location>target/lib</lib.location>
 		<maven.repository.id>nexus_deployment</maven.repository.id>
 		<maven.releases.repository>https://nexus.b2i.sg/repository/maven-releases</maven.releases.repository>
