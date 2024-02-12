@@ -3,7 +3,7 @@
 
     <groupId>com.b2international.snowowl</groupId>
     <artifactId>protege-parent</artifactId>
-    <version>5.0.7-SNAPSHOT</version>
+    <version>5.0.7.b2i</version>
     <packaging>pom</packaging>
 
     <name>protege-parent</name>
