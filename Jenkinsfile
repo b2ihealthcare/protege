@@ -34,11 +34,11 @@ try {
 
 		stage('Build') {
 
-			withMaven(jdk: 'OpenJDK_17', maven: 'Maven_3.8.4', mavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT') {
+			withMaven(globalMavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT', traceability: true) {
 				if (params.skipJavadoc.toBoolean()) {
-					sh "mvn clean ${mavenPhase} -Dmaven.install.skip=true"
+					sh "./mvnw clean ${mavenPhase} -Dmaven.install.skip=true"
 				} else {
-					sh "mvn clean ${mavenPhase} -Prelease -Dmaven.install.skip=true"
+					sh "./mvnw clean ${mavenPhase} -Prelease -Dmaven.install.skip=true"
 				}
 			}
 
