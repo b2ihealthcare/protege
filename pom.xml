@@ -95,7 +95,6 @@
 		<connection>scm:git:git@github.com:b2ihealthcare/protege.git</connection>
 		<developerConnection>scm:git:git@github.com:b2ihealthcare/protege.git</developerConnection>
 		<url>https://github.com/b2ihealthcare/protege</url>
-		<tag>protege-parent-5.0.7-SNAPSHOT</tag>
 	</scm>
 
 	<issueManagement>
