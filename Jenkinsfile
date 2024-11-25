@@ -34,7 +34,7 @@ try {
 
 		stage('Build') {
 
-			withMaven(globalMavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT', traceability: true) {
+			withMaven(jdk: 'OpenJDK_17', globalMavenSettingsConfig: custom_maven_settings, options: [artifactsPublisher(disabled: true)],  publisherStrategy: 'EXPLICIT', traceability: true) {
 				if (params.skipJavadoc.toBoolean()) {
 					sh "./mvnw clean ${mavenPhase} -Dmaven.install.skip=true"
 				} else {
