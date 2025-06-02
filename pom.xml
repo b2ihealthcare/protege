@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.b2international.snowowl</groupId>
-    <artifactId>protege-parent</artifactId>
-    <version>5.0.8.b2i</version>
-    <packaging>pom</packaging>
+	<groupId>com.b2international.snowowl</groupId>
+	<artifactId>protege-parent</artifactId>
+	<version>5.0.8.b2i</version>
+	<packaging>pom</packaging>
 
-    <name>protege-parent</name>
+	<name>protege-parent</name>
 	<description>Protege is a free, open source ontology editor that supports the full OWL 2 standard.</description>
 	<url>http://protege.stanford.edu</url>
 	<inceptionYear>1987</inceptionYear>
@@ -20,7 +20,7 @@
 			<url>http://opensource.org/licenses/BSD-2-Clause</url>
 		</license>
 	</licenses>
-	
+
 	<!-- Alphabetical by last name -->
 	<developers>
 		<developer>
@@ -49,14 +49,14 @@
 			<email>vendetti@stanford.edu</email>
 		</developer>
 	</developers>
-	
+
 	<contributors>
 		<contributor>
 			<name>Nick Drummond</name>
 			<email>nickdrummond@yahoo.com</email>
 		</contributor>
 	</contributors>
-	
+
 	<mailingLists>
 		<!-- For end users of Protege Desktop. -->
 		<mailingList>
@@ -69,7 +69,7 @@
 				<otherArchive>https://mailman.stanford.edu/pipermail/protege-user/</otherArchive>
 			</otherArchives>
 		</mailingList>
-		
+
 		<!-- For developers with questions about source code, developing Protege Desktop plug-ins, and/or programmatic access of ontologies.  -->
 		<mailingList>
 			<name>protege-dev</name>
@@ -82,15 +82,15 @@
 			</otherArchives>
 		</mailingList>
 	</mailingLists>
-		
+
 	<modules>
-<!-- 		<module>protege-launcher</module> -->
+		<!-- 		<module>protege-launcher</module> -->
 		<module>protege-common</module>
 		<module>protege-editor-core</module>
 		<module>protege-editor-owl</module>
-<!-- 		<module>protege-desktop</module> -->
+		<!-- 		<module>protege-desktop</module> -->
 	</modules>
-	
+
 	<scm>
 		<connection>scm:git:git@github.com:b2ihealthcare/protege.git</connection>
 		<developerConnection>scm:git:git@github.com:b2ihealthcare/protege.git</developerConnection>
@@ -107,16 +107,16 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
-		<owlapi.version>4.5.26</owlapi.version>		
+		<owlapi.version>4.5.26</owlapi.version>
 		<guava.version>33.2.0-jre</guava.version>
 		<slf4j.version>2.0.11</slf4j.version>
 		<logback.version>1.4.14</logback.version>
 		<lib.location>target/lib</lib.location>
 		<maven.repository.id>nexus_deployment</maven.repository.id>
-		<maven.releases.repository>https://nexus.b2i.sg/repository/maven-releases</maven.releases.repository>
-		<maven.snapshots.repository>https://nexus.b2i.sg/repository/maven-snapshots</maven.snapshots.repository>
+		<maven.releases.repository>https://artifacts.b2ihealthcare.com/repository/maven-releases</maven.releases.repository>
+		<maven.snapshots.repository>https://artifacts.b2ihealthcare.com/repository/maven-snapshots</maven.snapshots.repository>
 	</properties>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>${maven.repository.id}</id>
@@ -131,7 +131,7 @@
 	<dependencyManagement>
 		<dependencies>
 
-            <dependency>
+			<dependency>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>org.apache.felix.main</artifactId>
 				<version>6.0.1</version>
@@ -192,13 +192,13 @@
 				<artifactId>maven-artifact</artifactId>
 				<version>3.3.9</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>2.4</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.stanford.protege</groupId>
 				<artifactId>org.protege.xmlcatalog</artifactId>
@@ -214,7 +214,7 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.eclipse.jgit</groupId>
 				<artifactId>org.eclipse.jgit</artifactId>
@@ -232,25 +232,25 @@
 				<artifactId>jaxb-api</artifactId>
 				<version>2.3.0</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>com.sun.xml.bind</groupId>
 				<artifactId>jaxb-core</artifactId>
 				<version>2.3.0</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>com.sun.xml.bind</groupId>
 				<artifactId>jaxb-impl</artifactId>
 				<version>2.3.0</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>com.sun.activation</groupId>
 				<artifactId>javax.activation</artifactId>
 				<version>1.2.0</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
@@ -280,7 +280,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-				
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -293,20 +293,20 @@
 						<target>1.8</target>
 					</configuration>
 				</plugin>
-							
+
 				<plugin>
 					<groupId>org.apache.felix</groupId>
 					<artifactId>maven-bundle-plugin</artifactId>
 					<version>3.5.1</version>
 					<extensions>true</extensions>
 					<configuration>
-						<instructions>							
+						<instructions>
 							<Bundle-Vendor>The Protege Development Team</Bundle-Vendor>
-							<Embed-Directory>${lib.location}</Embed-Directory>							
+							<Embed-Directory>${lib.location}</Embed-Directory>
 						</instructions>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>3.0.0</version>
@@ -314,7 +314,7 @@
 						<deployAtEnd>true</deployAtEnd>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.0.0-M3</version>
@@ -323,9 +323,9 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+
 	<!-- Generate source and Javadoc JAR files -->
-    <profiles>
+	<profiles>
 		<profile>
 			<id>release</id>
 			<activation>
@@ -346,7 +346,7 @@
 							</execution>
 						</executions>
 					</plugin>
-		
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -485,5 +485,5 @@
 				</pluginManagement>
 			</build>
 		</profile>
-    </profiles>
+	</profiles>
 </project>
